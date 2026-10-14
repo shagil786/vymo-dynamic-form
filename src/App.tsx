@@ -5,20 +5,10 @@ import styles from "./App.module.css";
 export default function App() {
   return (
     <div className={styles.page}>
-      <header className={styles.topBar}>
-        <a className={styles.brand} href="#top">
-          Lead capture
-        </a>
-        <span className={styles.badge}>Vymo assignment</span>
-      </header>
-
-      <main id="top" className={styles.layout}>
+      <main className={styles.layout}>
         <div className={styles.intro}>
           <h1>Lead capture form</h1>
-          <p>
-            This demo validates your entries and shows the submitted values on
-            this page.
-          </p>
+          <p>Enter contact details and review the values on this page.</p>
         </div>
         <section aria-label="Lead capture form">
           <LeadCaptureForm config={leadFields} />

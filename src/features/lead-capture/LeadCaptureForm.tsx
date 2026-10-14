@@ -49,9 +49,7 @@ function SubmissionSummary({
   return (
     <section className={styles.success} aria-live="polite">
       <h2>Form values</h2>
-      <p className={styles.successCopy}>
-        These values passed validation. Nothing was sent.
-      </p>
+      <p className={styles.successCopy}>These values passed validation.</p>
 
       <dl className={styles.summary}>
         {submittedFields.map((field) => {
@@ -251,9 +249,8 @@ export function LeadCaptureForm({
         </div>
 
         <div className={styles.submitBar}>
-          <p className={styles.demoNote}>Demo form. Nothing is sent.</p>
           <Button type="submit" className={styles.submitButton}>
-            Submit form
+            Show values
           </Button>
         </div>
       </form>

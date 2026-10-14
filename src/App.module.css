@@ -4,31 +4,9 @@
   background: var(--color-canvas);
 }
 
-.topBar,
 .layout {
   width: min(100%, 54rem);
   margin-inline: auto;
-}
-
-.topBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.brand {
-  color: var(--color-ink);
-  font-size: var(--font-size-md);
-  font-weight: 750;
-  text-decoration: none;
-}
-
-.badge {
-  color: var(--color-muted);
-  font-size: var(--font-size-xs);
 }
 
 .layout {
@@ -57,10 +35,6 @@
 @media (max-width: 767px) {
   .page {
     padding: 1rem 1rem 5rem;
-  }
-
-  .topBar {
-    padding-bottom: 1rem;
   }
 
   .layout {
