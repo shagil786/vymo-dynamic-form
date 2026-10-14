@@ -1,5 +1,3 @@
-export type LeadType = "" | "individual" | "company";
-
 export type LeadValues = Record<string, string | boolean>;
 
 export type LeadFieldName = string;

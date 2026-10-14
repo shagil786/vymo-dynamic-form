@@ -7,35 +7,6 @@
   box-shadow: var(--shadow-card);
 }
 
-.panelHeader {
-  position: relative;
-  padding-left: 3.85rem;
-}
-
-.panelIcon {
-  position: absolute;
-  top: 0.1rem;
-  left: 0;
-  display: grid;
-  width: 2.9rem;
-  height: 2.9rem;
-  place-items: center;
-  border: 1px solid #e3e8ff;
-  border-radius: 1rem;
-  color: var(--color-accent);
-  background: linear-gradient(145deg, #f6f7ff, #edf0ff);
-  font-size: 1.2rem;
-  font-weight: 750;
-}
-
-.panelEyebrow {
-  margin: 0 0 0.45rem;
-  color: var(--color-accent-ink);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-}
-
 .panelHeader h2 {
   margin: 0;
   color: var(--color-ink);
@@ -88,11 +59,6 @@
   font-size: var(--font-size-xs);
 }
 
-.demoNote span {
-  color: #8894ad;
-  font-size: 0.95rem;
-}
-
 .submitButton {
   min-width: 10.75rem;
 }
@@ -102,28 +68,7 @@
   margin-inline: auto;
 }
 
-.successIcon {
-  display: grid;
-  width: 3.2rem;
-  height: 3.2rem;
-  place-items: center;
-  border-radius: 1rem;
-  color: var(--color-success);
-  background: var(--color-success-soft);
-  font-size: 1.4rem;
-  font-weight: 800;
-}
-
-.successEyebrow {
-  margin: 1.6rem 0 0.4rem;
-  color: var(--color-success);
-  font-size: var(--font-size-xs);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.success h3 {
+.success h2 {
   margin: 0;
   color: var(--color-ink);
   font-size: clamp(1.7rem, 4vw, 2.25rem);
@@ -188,16 +133,6 @@
     border-radius: 1.35rem;
   }
 
-  .panelHeader {
-    padding-left: 3.35rem;
-  }
-
-  .panelIcon {
-    width: 2.65rem;
-    height: 2.65rem;
-    border-radius: 0.85rem;
-  }
-
   .panelIntro {
     font-size: var(--font-size-xs);
   }
@@ -240,11 +175,5 @@
 
   .summaryRow {
     grid-template-columns: minmax(6.5rem, 0.75fr) minmax(0, 1.25fr);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .success {
-    scroll-behavior: auto;
   }
 }

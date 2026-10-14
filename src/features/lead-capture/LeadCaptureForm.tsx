@@ -5,12 +5,10 @@ import { Field } from "../../design-system/components/Field";
 import { SelectInput } from "../../design-system/components/SelectInput";
 import { TextArea } from "../../design-system/components/TextArea";
 import { TextInput } from "../../design-system/components/TextInput";
-import { transitionLeadType } from "./leadTypeTransition";
 import type {
   LeadFieldConfig,
   LeadFieldName,
   LeadSubmission,
-  LeadType,
   LeadValues,
 } from "./types";
 import { getVisibleFields, validateLead } from "./validation";
@@ -20,10 +18,6 @@ function initialValues(config: readonly LeadFieldConfig[]): LeadValues {
   return Object.fromEntries(
     config.map((field) => [field.name, field.type === "checkbox" ? false : ""]),
   );
-}
-
-function parseLeadType(value: string): LeadType {
-  return value === "individual" || value === "company" ? value : "";
 }
 
 function controlValue(value: string | boolean): string {
@@ -54,13 +48,9 @@ function SubmissionSummary({
 
   return (
     <section className={styles.success} aria-live="polite">
-      <div className={styles.successIcon} aria-hidden="true">
-        ✓
-      </div>
-      <p className={styles.successEyebrow}>Inquiry preview</p>
-      <h3>Thank you, {String(values.fullName || "there")}.</h3>
+      <h2>Form values</h2>
       <p className={styles.successCopy}>
-        Your form is valid. Here’s the information this demo would submit.
+        These values passed validation. Nothing was sent.
       </p>
 
       <dl className={styles.summary}>
@@ -84,7 +74,6 @@ function SubmissionSummary({
 
       <Button type="button" variant="secondary" onClick={onEdit}>
         Edit details
-        <span aria-hidden="true">↗</span>
       </Button>
     </section>
   );
@@ -104,13 +93,7 @@ export function LeadCaptureForm({
   const errors = validateLead(config, values);
 
   const updateField = (field: LeadFieldConfig, value: string | boolean) => {
-    setValues((current) => {
-      if (field.name === "leadType" && typeof value === "string") {
-        return transitionLeadType(current, parseLeadType(value));
-      }
-
-      return { ...current, [field.name]: value };
-    });
+    setValues((current) => ({ ...current, [field.name]: value }));
     setSubmission(null);
   };
 
@@ -137,7 +120,7 @@ export function LeadCaptureForm({
     }
 
     setSubmission(visibleSubmission(fields, values));
-    window.requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "smooth" }));
+    window.requestAnimationFrame(() => window.scrollTo(0, 0));
   };
 
   if (submission) {
@@ -155,14 +138,8 @@ export function LeadCaptureForm({
   return (
     <div className={styles.panel}>
       <div className={styles.panelHeader}>
-        <span className={styles.panelIcon} aria-hidden="true">
-          <span>↗</span>
-        </span>
-        <p className={styles.panelEyebrow}>YOUR NEXT STEP</p>
-        <h2>Share a few details</h2>
-        <p className={styles.panelIntro}>
-          We’ll use these to make your first conversation more useful.
-        </p>
+        <h2>Contact details</h2>
+        <p className={styles.panelIntro}>Fields marked * are required.</p>
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
@@ -274,13 +251,9 @@ export function LeadCaptureForm({
         </div>
 
         <div className={styles.submitBar}>
-          <p className={styles.demoNote}>
-            <span aria-hidden="true">◈</span>
-            Demo form · Nothing is sent
-          </p>
+          <p className={styles.demoNote}>Demo form. Nothing is sent.</p>
           <Button type="submit" className={styles.submitButton}>
-            Submit inquiry
-            <span aria-hidden="true">→</span>
+            Submit form
           </Button>
         </div>
       </form>

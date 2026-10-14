@@ -1,7 +1,6 @@
 import type {
   LeadErrors,
   LeadFieldConfig,
-  LeadFieldName,
   LeadValues,
 } from "./types";
 
@@ -64,11 +63,4 @@ export function validateLead(
   }
 
   return errors;
-}
-
-export function getFieldError(
-  errors: LeadErrors,
-  name: LeadFieldName,
-): string | undefined {
-  return errors[name];
 }

@@ -3,12 +3,10 @@
 }
 
 html {
-  min-width: 320px;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
-  min-width: 320px;
   min-height: 100vh;
   margin: 0;
 }

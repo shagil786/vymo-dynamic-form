@@ -13,8 +13,8 @@ export const leadFields: readonly LeadFieldConfig[] = [
   {
     name: "email",
     type: "email",
-    label: "Work email",
-    placeholder: "you@company.com",
+    label: "Email",
+    placeholder: "you@example.com",
     autoComplete: "email",
     inputMode: "email",
     validation: {
@@ -29,7 +29,7 @@ export const leadFields: readonly LeadFieldConfig[] = [
   {
     name: "leadType",
     type: "select",
-    label: "I’m reaching out as",
+    label: "Lead type",
     placeholder: "Choose one",
     options: [
       { label: "An individual", value: "individual" },
@@ -68,8 +68,8 @@ export const leadFields: readonly LeadFieldConfig[] = [
   {
     name: "notes",
     type: "textarea",
-    label: "What would you like to discuss?",
-    placeholder: "A little context helps us bring the right person into the conversation.",
+    label: "Notes",
+    placeholder: "Optional context",
     hint: "Optional",
     validation: {
       maxLength: {

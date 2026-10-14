@@ -21,7 +21,6 @@ src/
   features/lead-capture/
     leadFields.ts     Lead form field configuration and select options
     validation.ts     Pure, configuration-driven validation
-    leadTypeTransition.ts  Lead type state transition
     LeadCaptureForm.tsx    Config-rendered form and submission summary
   App.tsx             Page composition
 ```
